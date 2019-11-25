@@ -2,10 +2,6 @@ const app = require('./app')
 const {PORT, DATABASE_URL} = require('./config')
 const knex = require('knex')
 
-app.get('/api/*', (req, res) => {
-  res.json({ok: true});
-});
-
 const db = knex({
   client: 'pg',
   connection: DATABASE_URL,

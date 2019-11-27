@@ -12,7 +12,6 @@ var jwt = require('jsonwebtoken');
 
 
 SleepRouter.use( '/:token',(req, res, next) => {
-    console.log('middleware')
     const token = req.params.token
     if (!token) {
         res.status(401).json({ error: { message: "missing token" } })
@@ -70,7 +69,6 @@ SleepRouter
             userid: req.user.id
 
         };
-        console.log(newSleep)
 
         SleepService.insertSleep(req.app.get('db'), newSleep)
             .then(sleep => {

@@ -12,7 +12,6 @@ var jwt = require('jsonwebtoken');
 
 
 NursingRouter.use( '/:token',(req, res, next) => {
-    console.log('middleware')
     const token = req.params.token
     if (!token) {
         res.status(401).json({ error: { message: "missing token" } })
@@ -72,7 +71,6 @@ NursingRouter
             leftside,
             userid: req.user.id
         };
-        console.log(newNursing)
 
         NursingService.insertNursing(req.app.get('db'), newNursing)
             .then(nursing => {

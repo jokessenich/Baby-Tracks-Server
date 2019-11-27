@@ -18,13 +18,12 @@ const morganOption = (NODE_ENV === 'production')  ? 'tiny'
 app.use(morgan(morganOption))
 app.use(helmet())
 app.use(cors())
-
+/*
 app.use(function(req, res, next) {
     
     //intercepts OPTIONS method
     if ('OPTIONS' === req.method) {
       //respond with 200
-      console.log('hello???')
       next();
     }
     else {
@@ -32,6 +31,7 @@ app.use(function(req, res, next) {
       next();
     }
 });
+*/
 
 app.get('/', (req, res)=> {
     res.send('Hello, world!')

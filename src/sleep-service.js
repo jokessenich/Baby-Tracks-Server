@@ -15,9 +15,11 @@ const SleepService = {
       })
   },
 
-  getUserById(knex, id) {
+  getById(knex, id) {
     return knex.from('sleep').select('*').where('id', id).first()
   },
+
+
   getByUserId(knex, id) {
     return knex.from('sleep').select('*').where('userid', id)
   },

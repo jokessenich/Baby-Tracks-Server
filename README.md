@@ -1,26 +1,42 @@
-# Express Boilerplate!
+# Baby Tracks App!
 
-This is a boilerplate project used for starting new projects!
+This is a Baby Tracks App which can be used to track the nursing, eating, and sleeping of a newborn baby. A link to the app can be found here.
 
-## Set up
+https://baby-tracks-app.johnnykessenich.now.sh/user/login
 
-Complete the following steps to start a new project (NEW-PROJECT-NAME):
+## Documentation for the API
 
-1. Clone this repository to your local machine `git clone BOILERPLATE-URL NEW-PROJECTS-NAME`
-2. `cd` into the cloned repository
-3. Make a fresh start of the git history for this project with `rm -rf .git && git init`
-4. Install the node dependencies `npm install`
-5. Move the example Environment file to `.env` that will be ignored by git and read by the express server `mv example.env .env`
-6. Edit the contents of the `package.json` to use NEW-PROJECT-NAME instead of `"name": "express-boilerplate",`
+The API can be found at 
+https://baby-tracks-server.herokuapp.com/api
 
-## Scripts
+### ENDPOINTS
 
-Start the application `npm start`
+ALL ENDPOINTS REQUIRE VALID TOKEN
+Operations avaliable are GET
+User can add '/:id'  after token to use a particularly entry by ID
+Operations are GET, DELETE, PATCH
 
-Start nodemon for the application `npm run dev`
+/sleep/[TOKEN]- returns the sleep entries for the user
 
-Run the tests `npm test`
+/nursing/[TOKEN]- returns the nursing entries for the user
 
-## Deploying
+/diapers[TOKEN]- returns the diaper entries for the user
 
-When your new project is ready for deployment, add a new Heroku application with `heroku create`. This will make a new git remote called "heroku" and you can then `npm run deploy` which will push to this remote's master branch.
+
+
+
+## Summary
+
+Users can login and proceed to 3 different options of baby tracking.
+
+Diapers- users can input the date and time of the diaper and see past diaper events.
+
+Sleep- users can input the date and times of the sleep beginning and end times
+
+Nursing- users can use a timer to time the nursings of their baby. The timer times on either side and the user can switch in between. 
+
+## Technology Used
+
+The server was built with node, express, postgreSQL, knex.
+
+The client was built with react.

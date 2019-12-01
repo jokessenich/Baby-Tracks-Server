@@ -48,7 +48,8 @@ UserRouter
     .get((req, res, next) => {
         const knexInstance = req.app.get('db')
         UserService.getAllUser(knexInstance)
-            .then(user => {
+            .then(user => { 
+                if(!bcrypt)
                 res.json(user)
             })
             .catch(next);
